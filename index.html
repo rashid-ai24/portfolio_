@@ -1,72 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon — Mohamed Rashid</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coming Soon -- Mohamed Rashid</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html,body { height:100%; }
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            text-align: center;
-        }
+    body {
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:2rem;
+      color:#fff;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
+      background-size:400% 400%;
+      animation: bg 15s ease infinite;
+      overflow:hidden;
+    }
+    @keyframes bg {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
 
-        h1 {
-            font-size: 3em;
-            font-weight: 600;
-        }
+    .card {
+      width:100%;
+      max-width:960px;
+      padding:3.5rem 2rem;
+      border-radius:16px;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
 
-        .subtitle {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            opacity: 0.85;
-        }
+    .big {
+      font-size: clamp(2.8rem, 8vw, 6.2rem);
+      letter-spacing: 0.32rem;
+      font-weight:800;
+      text-transform:uppercase;
+      margin-bottom:0.6rem;
+      line-height:0.9;
+      text-shadow: 0 0 15px rgba(138, 43, 226, 0.7),
+                   0 0 30px rgba(0, 191, 255, 0.5);
+    }
 
-        .loader {
-            border: 6px solid rgba(255, 255, 255, 0.2);
-            border-top: 6px solid white;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 20px 0;
-        }
+    .subtitle {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      margin-bottom:1.3rem;
+      opacity:0.9;
+    }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+    .tagline {
+      font-style:italic;
+      margin-bottom:1.6rem;
+      opacity:0.85;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 15px;
-            background: white;
-            color: #2c5364;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+    .actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:1.8rem; }
 
-        .btn:hover {
-            background: #ddd;
-        }
-    </style>
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:0.8rem 1.6rem;
+      border-radius:999px;
+      border: 2px solid rgba(255,255,255,0.18);
+      background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+      color:#fff;
+      font-weight:700;
+      text-decoration:none;
+      transition: transform .50s ease, background .50s ease;
+      min-width:160px;
+    }
+    .btn:hover { transform: translateY(-4px); background: rgba(255,255,255,0.15); color:#00d4ff; }
+
+    .ghost {
+      background: transparent;
+      border: 2px dashed rgba(255,255,255,0.12);
+      font-weight:600;
+      min-width: 140px;
+    }
+
+    /* Loader */
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid #00d4ff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    footer {
+      font-size:0.85rem;
+      opacity:0.75;
+      margin-top:1rem;
+    }
+
+    @media (max-width:420px){
+      .card { padding:2rem 1rem; }
+      .big { letter-spacing:0.18rem; }
+    }
+  </style>
 </head>
 <body>
-    <h1>🚀 Coming Soon</h1>
-    <div class="subtitle">Mohamed Rashid — Beginner Web Developer</div>
+  <main class="card">
+    <h1 class="big">COMING SOON</h1>
+    <div class="subtitle">Mohamed Rashid -- Beginner Web Developer</div>
+    <div class="tagline">"Small steps every day lead to big results"</div>
+
+    <div class="actions">
+      <a class="btn" href="mailto:moh.rashid20006@gmail.com">📧 Contact</a>
+      <a class="btn ghost" href="https://github.com/raz-x" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+
     <div class="loader"></div>
-    <a class="btn" href="mailto:moh.rashid20006@gmail.com">📧 Contact</a>
+
+    <footer>© <span id="year"></span> Mohamed Rashid • All rights reserved</footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
