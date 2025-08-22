@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohamed Rashid Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+<header class="navbar">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</header>
+
+<section id="home" class="hero">
+  <h1>Hi, I'm <span>Mohamed Rashid</span></h1>
+  <p>Front-End Developer | Python Enthusiast</p>
+  <button onclick="scrollToSection('contact')">Let’s Connect</button>
+</section>
+
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>I build responsive, animated, and creative websites using HTML, CSS, JS, and Python.</p>
+</section>
+
+<section id="projects" class="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">Project 1</div>
+    <div class="project-card">Project 2</div>
+    <div class="project-card">Project 3</div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Message Me</h2>
+  <form action="/send" method="POST" id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+  <p id="formMessage"></p>
+</section>
+
+<footer>
+  <p>© 2025 Mohamed Rashid | Built with ❤️ using Python + HTML + CSS</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
